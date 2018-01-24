@@ -30,6 +30,7 @@ for f in os.listdir(filepath1 + filepath2):
         print(_f[0], " not found!")
     else:   #if there is at least one matching e-mail, send e-mail
         stringemail = ""
+        print("Org: ", _f[0])
         for address in emaillist:
             stringemail += address + ";"
         print("Sending email to: ", stringemail)
