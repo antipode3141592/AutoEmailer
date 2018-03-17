@@ -1,3 +1,46 @@
+#   AutoEmailer
+#   Copyright 2018 by Sean Vo Kirkpatrick using GNU GPL v3
+#   skirkpatrick@racc.org or sean@studioantipode.com or seanvokirkpatrick@gmail.com
+#
+#   Sends an e-mail with an attachment, based on the file name and a lookup table in an excel file,
+#   for each attachment file in a given input folder.
+#   
+#   Requirements:     
+#               -a running and e-mail ready Outlook instance
+#               -Excel file of contacts to e-mail
+#               -Files to attach to e-mails in a folder
+#               -e-mail body text in a text file
+#   Outputs:    -Lists e-mails sent
+#               -Lists contacts not found
+#
+#   Files to be attached must have names of the form "[Org Name] - [some text].[some filetype]"
+#       Program doesn't care what filetypes are used as attachments, but all of the rules Outlook enforces
+#       will be enforced, such as file size and type.
+#   Makes a connection to an open instance of Outlook, e-mails will be sent using the active account
+#   The program loops through all of the files in the "path_input" folder:
+#       First, parse the file name name to get the organization name.
+#       Second, search the contact list excel file for the appropriate e-mail addresses.
+#       Send the file as an attachment to all e-mail addresses found, with a body set to the "file_emailbody" file
+#       (note: currently only plain text)
+#   This program is easily alterable to send different 
+
+#
+#   Tested using    - Anaconda 5.0.0
+#                   - pandas 0.22.0
+#   IDE: Visual Studio 2017 Community Edition
+
+# License Info:
+#   This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import win32com.client as win32
 import os
 import pandas as pd
