@@ -22,7 +22,8 @@
 #       Second, search the contact list excel file for the appropriate e-mail addresses.
 #       Send the file as an attachment to all e-mail addresses found, with a body set to the "file_emailbody" file
 #       (note: currently only plain text)
-#   This program is easily alterable to send different 
+#   Files that have a positive number of associated e-mail addresses are then moved to the "path_output" folder, 
+#       and files that had no associated e-mail addresses to the "path_errors" folder.
 
 #
 #   Tested using    - Anaconda 5.0.0
